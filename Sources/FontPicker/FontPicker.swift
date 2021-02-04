@@ -9,7 +9,7 @@ import SwiftUI
 import HalfASheet
 
 
-struct FontPicker: View {
+public struct FontPicker: View {
     
     @Binding private var isPresented: Bool
     @Binding private var selection: String
@@ -33,12 +33,12 @@ struct FontPicker: View {
     /// - Parameters:
     ///   - isPresented: binding to a Bool which controls whether or not to show the picker
     ///   - selected: binding to a String for the selected font name
-    init(isPresented: Binding<Bool>, selected: Binding<String>) {
+    public init(isPresented: Binding<Bool>, selected: Binding<String>) {
         _isPresented = isPresented
         _selection = selected
     }
     
-    var body: some View {
+    public var body: some View {
         
         HalfASheet(isPresented: $isPresented, title: "Font") {
             

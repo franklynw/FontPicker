@@ -86,6 +86,15 @@ FontPicker(isPresented: $isFontPickerPresented, selected: $viewModel.selectedFon
     .backgroundColor(.lightGray)
 ```
 
+## Additionally...
+
+There are two NotificationCenter notifications which are sent, which are defined as static vars on Notification.Name -
+
+* fontPickerAppeared ("FontPickerAppearedNotification")
+* fontPickerDisappeared ("FontPickerDisappearedNotification")
+
+These are sent as their names suggest, and there is no additional userInfo
+
 
 ## Dependencies
 

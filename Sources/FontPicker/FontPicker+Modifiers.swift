@@ -73,6 +73,9 @@ struct FontPickerPresentationModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        self.content()
+        ZStack {
+            content
+            self.content()
+        }
     }
 }

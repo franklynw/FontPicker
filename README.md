@@ -2,7 +2,7 @@
 
 A Font Picker in a similar style to Apple's Color Picker, providing a means of choosing a font from the available UIFont familyNames. I'm not 100% sure that all of these font names work in SwiftUI, but they seem to.
 
-<img src="Resources//Example1.png" alt="Example 1"/>
+<img src="Sources/FontPicker/Resources//Example1.png" alt="Example 1"/>
 
 ## Installation
 
@@ -37,9 +37,7 @@ var body: some View {
     MyView {
     
     }
-    .fontPicker(isPresented: $isFontPickerPresented, Binding: $viewModel.selectedFont) {
-        // your view here
-    }
+    .fontPicker(isPresented: $isFontPickerPresented, Binding: $viewModel.selectedFont)
 }
 ```
 

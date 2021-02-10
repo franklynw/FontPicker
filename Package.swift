@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "FontPicker",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v14)
     ],
@@ -19,7 +20,8 @@ let package = Package(
     targets: [
         .target(
             name: "FontPicker",
-            dependencies: ["HalfASheet"]),
+            dependencies: ["HalfASheet"],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "FontPickerTests",
             dependencies: ["FontPicker"]),

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Notification.Name+Extensions.swift
 //  
 //
 //  Created by Franklyn Weber on 04/02/2021.

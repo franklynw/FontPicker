@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import HalfASheet
 
 
 extension FontPicker {
     
+    /// Use this for more precise control over the picker's height
+    /// - Parameter height: a HalfASheetHeight case
+    public func height(_ height: HalfASheetHeight) -> Self {
+        var copy = self
+        copy.height = height
+        return copy
+    }
+ 
     /// The color to use for the background of the picker
     /// - Parameter backgroundColor: a UIColor
     public func backgroundColor(_ backgroundColor: UIColor) -> Self {

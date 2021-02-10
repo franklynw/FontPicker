@@ -58,7 +58,7 @@ extension View {
     /// - Parameters:
     ///   - isPresented: binding to a Bool which controls whether or not to show the picker
     ///   - selected: binding to a String for the selected font name
-    func fontPicker(isPresented: Binding<Bool>, selected: Binding<String>) -> some View {
+    public func fontPicker(isPresented: Binding<Bool>, selected: Binding<String>) -> some View {
         modifier(FontPickerPresentationModifier(content: { FontPicker(isPresented: isPresented, selected: selected)}))
     }
 }

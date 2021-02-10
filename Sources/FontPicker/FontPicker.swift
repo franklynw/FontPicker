@@ -40,7 +40,7 @@ public struct FontPicker: View {
     
     public var body: some View {
         
-        HalfASheet(isPresented: $isPresented, title: "Font") {
+        HalfASheet(isPresented: $isPresented, title: NSLocalizedString("Font", bundle: Bundle.module, comment: "Font")) {
             
             ZStack {
                 

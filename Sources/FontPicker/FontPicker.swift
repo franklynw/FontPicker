@@ -40,32 +40,40 @@ public struct FontPicker: View {
     
     public var body: some View {
         
-        HalfASheet(isPresented: $isPresented, title: NSLocalizedString("Font", bundle: Bundle.module, comment: "Font")) {
+        HalfASheet(isPresented: $isPresented) {
             
-            ZStack {
+            VStack {
                 
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color(UIColor.lightGray.withAlphaComponent(0.2)))
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color(backgroundColor))
+                Text(NSLocalizedString("Font", bundle: Bundle.module, comment: "Font"))
+                    .font(Font.headline.weight(.semibold))
+                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    .lineLimit(1)
                 
-                List {
-                    ForEach(fontNamesToDisplay(), id: \.self) { fontName in
-                        
-                        HStack {
-                            Text(fontName)
-                                .customFont(name: fontName)
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            selection = fontName
-                            if _dismissOnSelection {
-                                isPresented = false
+                ZStack {
+                    
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color(UIColor.lightGray.withAlphaComponent(0.2)))
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color(backgroundColor))
+                    
+                    List {
+                        ForEach(fontNamesToDisplay(), id: \.self) { fontName in
+                            
+                            HStack {
+                                Text(fontName)
+                                    .customFont(name: fontName)
+                                Spacer()
+                            }
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                selection = fontName
+                                if _dismissOnSelection {
+                                    isPresented = false
+                                }
                             }
                         }
+                        .listRowBackground(Color.clear)
                     }
-                    .listRowBackground(Color.clear)
                 }
             }
             .onAppear {

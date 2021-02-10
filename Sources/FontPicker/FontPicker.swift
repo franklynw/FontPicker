@@ -27,6 +27,7 @@ public struct FontPicker: View {
     
     internal var backgroundColor: UIColor = .systemBackground
     internal var _dismissOnSelection = true
+    internal var height: HalfASheetHeight?
     
     
     /// Initialiser
@@ -83,6 +84,7 @@ public struct FontPicker: View {
                 NotificationCenter.default.post(name: .fontPickerDisappeared, object: self)
             }
         }
+        .height(height ?? .proportional(0.84))
         .backgroundColor(backgroundColor)
         .closeButtonColor(UIColor.gray.withAlphaComponent(0.4))
         .disableDragToDismiss

@@ -53,9 +53,7 @@ public struct FontPicker: View {
                 ZStack {
                     
                     RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color(UIColor.lightGray.withAlphaComponent(0.2)))
-                    RoundedRectangle(cornerRadius: 10)
-                        .foregroundColor(Color(backgroundColor))
+                        .foregroundColor(Color(backgroundColor.withAlphaComponent(0.4).equivalentColorWithNoTransparency))
                     
                     List {
                         ForEach(fontNamesToDisplay(), id: \.self) { fontName in
@@ -75,6 +73,7 @@ public struct FontPicker: View {
                         }
                         .listRowBackground(Color.clear)
                     }
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
             .onAppear {
@@ -85,9 +84,9 @@ public struct FontPicker: View {
             }
         }
         .height(height ?? .proportional(0.84))
+        .contentInsets(EdgeInsets(top: 8, leading: 16, bottom: 16, trailing: 16))
         .backgroundColor(backgroundColor)
-        .closeButtonColor(UIColor.gray.withAlphaComponent(0.4))
-        .disableDragToDismiss
+        .closeButtonColor(UIColor.black.withAlphaComponent(0.3))
     }
     
     private func fontNamesToDisplay() -> [String] {

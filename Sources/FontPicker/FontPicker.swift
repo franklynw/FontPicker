@@ -73,7 +73,6 @@ public struct FontPicker: View {
                         }
                         .listRowBackground(Color.clear)
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
             .onAppear {

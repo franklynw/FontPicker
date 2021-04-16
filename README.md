@@ -113,6 +113,6 @@ These are sent as their names suggest, and there is no additional userInfo
 Requires HalfASheet, which is linked. Take a look at it [here](https://github.com/franklynw/HalfASheet)
 
 
-## License  
+## Licence  
 
-`FontPicker` is available under the MIT license
+`FontPicker` is available under the MIT licence
